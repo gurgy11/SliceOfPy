@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS products (
+	id INT AUTO_INCREMENT,
+    category_id INT,
+    sub_category_id INT,
+    name VARCHAR(255) NOT NULL,
+    model VARCHAR(255) NOT NULL,
+    color VARCHAR(100),
+    description TEXT,
+    warehouse_id INT,
+    location_id INT,
+    price_per_unit DOUBLE,
+    quantity INT,
+    sku VARCHAR(25) NOT NULL,
+    barcode VARCHAR(25),
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (category_id) REFERENCES categories(id),
+    FOREIGN KEY (sub_category_id) REFERENCES sub_categories(id),
+    FOREIGN KEY (warehouse_id) REFERENCES warehouses(id),
+    FOREIGN KEY (location_id) REFERENCES locations(id)
+);

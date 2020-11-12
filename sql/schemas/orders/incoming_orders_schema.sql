@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS incoming_orders (
+	id INT AUTO_INCREMENT,
+    order_id INT NOT NULL,
+    supplier_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    cost_per_unit DOUBLE NOT NULL,
+    cost_shipping DOUBLE,
+    warehouse_destination_id INT NOT NULL,
+    due_date DATETIME,
+    eta DATETIME,
+    delivery_status VARCHAR(100) NOT NULL,
+    notes TEXT,
+    user_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(id),
+    FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (warehouse_destination_id) REFERENCES warehouses(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);

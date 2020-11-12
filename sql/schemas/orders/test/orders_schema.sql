@@ -1,0 +1,10 @@
+CREATE TABLE sliceofpy_db.orders IF NOT EXISTS
+(
+    id INT AUTO_INCREMENT,
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY
+(id)
+);
+
+COMMIT;
