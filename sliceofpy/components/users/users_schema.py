@@ -13,7 +13,7 @@ class UsersSchema(Schema):
     phone = fields.Str(required=True)
     address = fields.Str(required=True)
     username = fields.Str(required=True)
-    password = fields.str(required=True)
+    password = fields.Str(required=True)
     created_at = fields.DateTime(default=dt.datetime.now())
 
     def __init__(self):
@@ -41,14 +41,36 @@ class UsersSchema(Schema):
             'TIMESTAMP'
         ]
         self.column_definitions = [
-            'AUTO_INCREMENT', # id
-            'NOT NULL', # fname
-            'NOT NULL', # lname
-            'NOT NULL', # email
-            '', # phone
-            '', # address
-            'NOT NULL', # username
-            'NOT NULL', # password
+            'AUTO_INCREMENT',  # id
+            'NOT NULL',  # fname
+            'NOT NULL',  # lname
+            'NOT NULL',  # email
+            '',  # phone
+            '',  # address
+            'NOT NULL',  # username
+            'NOT NULL',  # password
             'NOT NULL DEFAULT CURRENT_TIMESTAMP'
         ]
-        self.primary__key = 'id'
+        self.primary_key = 'id'
+
+    ''' Properties '''
+
+    @property
+    def table_name(self):
+        return self.table_name
+
+    @property
+    def column_names(self):
+        return self.column_names
+
+    @property
+    def column_types(self):
+        return self.column_types
+
+    @property
+    def column_definitions(self):
+        return self.column_definitions
+
+    @property
+    def primary__key(self):
+        return self.primary_key

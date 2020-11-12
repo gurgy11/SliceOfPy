@@ -1,5 +1,9 @@
+# Package Imports
 import os
 from flask import Flask, render_template
+
+# Local Imports
+from sliceofpy.components.database import initialize_tables as init_tables
 
 
 def create_app(test_config=None):
@@ -22,6 +26,7 @@ def create_app(test_config=None):
     @app.route('/')
     @app.route('/index')
     def index():
+        init_tables()
         return render_template('index.html', title='SliceOfPy - Index')
 
     return app

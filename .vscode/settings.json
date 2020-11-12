@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "SliceOfPy",
+            "database": "sliceofpy_db",
+            "username": "gregory",
+            "password": "TallyWally123!"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "SliceOfPy",
+            "database": "sliceofpy_db",
+            "username": "gregory",
+            "password": "TallyWally123!"
+        }
+    ]
+}
